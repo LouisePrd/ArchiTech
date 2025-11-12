@@ -1,0 +1,16 @@
+.links {
+  display: flex;
+  gap: 10px;
+}
+
+.link {
+  background-color: #0070f3;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: #0059c1;
+}
