@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "../component/header";
 import styles from "../styles/Access.module.css";
 
 import { useState } from "react";
@@ -30,57 +31,60 @@ export default function SignUpPage() {
   };
 
   return (
-    <div className={styles.accessContainer}>
-      <form onSubmit={handleSignUp}>
-        <div style={{ display: "flex", justifyContent: "center" , marginBottom: "1.5rem" }}>
-          <Image
-            src="/logo.svg"
-            width={150}
-            height={150}
-            alt="ArchiTech Logo"
-          />
-        </div>
+    <div>
+      <Header/>
+      <div className={styles.accessContainer}>
+        <form onSubmit={handleSignUp}>
+          <div style={{ display: "flex", justifyContent: "center" , marginBottom: "1.5rem" }}>
+            <Image
+              src="/logo.svg"
+              width={150}
+              height={150}
+              alt="ArchiTech Logo"
+            />
+          </div>
 
-        {/* <h1>Inscription</h1> */}
+          {/* <h1>Inscription</h1> */}
 
-        <div>
-          <label className={styles.label}>Email</label>
-          <input className={styles.input}
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+          <div>
+            <label className={styles.label}>Email</label>
+            <input className={styles.input}
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <div>
-          <label className={styles.label}>Mot de passe</label>
-          <input className={styles.input}
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+          <div>
+            <label className={styles.label}>Mot de passe</label>
+            <input className={styles.input}
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <div>
-          <label className={styles.label}>Confirmer le mot de passe</label>
-          <input className={styles.input}
-            type="password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        </div>
+          <div>
+            <label className={styles.label}>Confirmer le mot de passe</label>
+            <input className={styles.input}
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        {error && <p>{error}</p>}
+          {error && <p>{error}</p>}
 
-        <button type="submit" className={styles.registerButton}>S'inscrire</button>
+          <button type="submit" className={styles.registerButton}>S'inscrire</button>
 
-        <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          Déjà un compte ? <a href="/signin" className={styles.loginButton}>Connecte-toi</a>
-        </p>
-      </form>
+          <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
+            Déjà un compte ? <a href="/signin" className={styles.loginButton}>Connecte-toi</a>
+          </p>
+        </form>
+      </div>
     </div>
   );
 }

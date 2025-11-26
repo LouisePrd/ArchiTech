@@ -1,0 +1,12 @@
+#header{
+    padding: 20px;
+    background-color:#003F88;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 50px;
+}
+
+#logo {
+    max-height: 50px;
+}

@@ -9,9 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@rjsf/core": "^6.1.1",
-    "@rjsf/utils": "^6.1.1",
-    "@rjsf/validator-ajv8": "^6.1.1",
+    "@rjsf/core": "^6.1.2",
+    "@rjsf/utils": "^6.1.2",
+    "@rjsf/validator-ajv8": "^6.1.2",
     "firebase": "^12.6.0",
     "next": "16.0.1",
     "react": "19.2.0",
