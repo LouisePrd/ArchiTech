@@ -4,6 +4,7 @@ import styles from "../styles/Access.module.css";
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from 'next/image'
 
 export default function SignInPage() {
   const router = useRouter();
@@ -25,7 +26,16 @@ export default function SignInPage() {
   return (
     <div className={styles.accessContainer}>
       <form onSubmit={handleLogin}>
-        <h1>Connexion</h1>
+        <div style={{ display: "flex", justifyContent: "center" , marginBottom: "1.5rem" }}>
+          <Image
+            src="/logo.svg"
+            width={150}
+            height={150}
+            alt="ArchiTech Logo"
+          />
+        </div>
+        
+        {/* <h1>Connexion</h1> */}
 
         <div>
           <label className={styles.label}>Email</label>
@@ -45,6 +55,9 @@ export default function SignInPage() {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <p style={{ textAlign: "center", color: "#FF2525", marginTop: "0.5rem" }}>
+            Mot de passe oublié ?
+          </p>
         </div>
 
         {error && <p>{error}</p>}

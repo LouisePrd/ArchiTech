@@ -1,7 +1,10 @@
 "use client";
 
+import styles from "../styles/Access.module.css";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from 'next/image'
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -27,13 +30,22 @@ export default function SignUpPage() {
   };
 
   return (
-    <div>
+    <div className={styles.accessContainer}>
       <form onSubmit={handleSignUp}>
-        <h1>Inscription</h1>
+        <div style={{ display: "flex", justifyContent: "center" , marginBottom: "1.5rem" }}>
+          <Image
+            src="/logo.svg"
+            width={150}
+            height={150}
+            alt="ArchiTech Logo"
+          />
+        </div>
+
+        {/* <h1>Inscription</h1> */}
 
         <div>
-          <label>Email</label>
-          <input
+          <label className={styles.label}>Email</label>
+          <input className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -42,19 +54,18 @@ export default function SignUpPage() {
         </div>
 
         <div>
-          <label>Mot de passe</label>
-          <input
+          <label className={styles.label}>Mot de passe</label>
+          <input className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full border rounded-lg px-3 py-2"
             required
           />
         </div>
 
         <div>
-          <label>Confirmer le mot de passe</label>
-          <input
+          <label className={styles.label}>Confirmer le mot de passe</label>
+          <input className={styles.input}
             type="password"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -64,10 +75,10 @@ export default function SignUpPage() {
 
         {error && <p>{error}</p>}
 
-        <button type="submit">S'inscrire</button>
+        <button type="submit" className={styles.registerButton}>S'inscrire</button>
 
-        <p>
-          Déjà un compte ? <a href="/signin">Connecte-toi</a>
+        <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
+          Déjà un compte ? <a href="/signin" className={styles.loginButton}>Connecte-toi</a>
         </p>
       </form>
     </div>
