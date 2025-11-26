@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "../styles/Access.module.css";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -21,13 +23,13 @@ export default function SignInPage() {
   };
 
   return (
-    <div>
+    <div className={styles.accessContainer}>
       <form onSubmit={handleLogin}>
         <h1>Connexion</h1>
 
         <div>
-          <label>Email</label>
-          <input
+          <label className={styles.label}>Email</label>
+          <input className={styles.input}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -36,8 +38,8 @@ export default function SignInPage() {
         </div>
 
         <div>
-          <label>Mot de passe</label>
-          <input
+          <label className={styles.label}>Mot de passe</label>
+          <input className={styles.input}
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -47,10 +49,10 @@ export default function SignInPage() {
 
         {error && <p>{error}</p>}
 
-        <button type="submit">Se connecter</button>
+        <button className={styles.loginButton} type="submit">Se connecter</button>
 
-        <p>
-          Pas encore de compte ? <a href="/signup">Crée-en un</a>
+        <p style={{ textAlign: "center", marginTop: "1.5rem" }}>
+          Pas encore de compte ? <a href="/signup" className={styles.registerButton}>Crée-en un</a>
         </p>
       </form>
     </div>
